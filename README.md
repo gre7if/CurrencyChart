@@ -12,4 +12,4 @@ https://api-pub.bitfinex.com/v2/conf/pub:list:pair:exchange
 
 **Line chart for BTC-USD**
 
-<img src="https://github.com/gre7if/CurrencyChart/blob/main/Screenshots/Line%20chart%20for%20BTC-USD.png" width="300">
+<img src="https://github.com/gre7if/CurrencyChart/blob/main/Screenshots/Chart%20for%20BTC-USD.png" width="300">
