@@ -15,36 +15,16 @@ extension Collection {
 }
 
 extension Array {
-    
-    func flattenedToStringArray() -> [String] {
-        var myArray = [String]()
-        for element in self {
-            if let element = element as? String {
-                myArray.append(element)
-            }
-            if let element = element as? [Any] {
-                let result = element.flattenedToStringArray()
-                for i in result {
-                    myArray.append(i)
-                }
-            }
-        }
-        return myArray
-    }
 
-    func flattenedToDoubleArray() -> [Double] {
-        var myArray = [Double]()
-        for element in self {
-            if let element = element as? Double {
-                myArray.append(element)
+    func flattenedToArray<ReturnType>() -> [ReturnType] {
+        reduce([]) { result, element in
+            if let value = element as? ReturnType {
+                return result + [value]
             }
-            if let element = element as? [Any] {
-                let result = element.flattenedToDoubleArray()
-                for i in result {
-                    myArray.append(i)
-                }
+            guard let values = element as? [ReturnType] else {
+                return result
             }
+            return result + values
         }
-        return myArray
     }
 }

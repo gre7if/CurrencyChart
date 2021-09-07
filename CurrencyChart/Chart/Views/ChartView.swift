@@ -32,16 +32,7 @@ class ChartView: UIView {
                 
         return lineChart
     }()
-    
-    private(set) lazy var passMessageButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Get last price", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20)
-        button.backgroundColor = .black
-        return button
-    }()
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews()
@@ -54,23 +45,13 @@ class ChartView: UIView {
     }
         
     private func addSubviews() {
-        addSubview(passMessageButton)
         addSubview(lineChart)
     }
     
     private func makeConstraints() {
-        passMessageButton.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(2)
-            make.height.equalTo(60)
-            make.centerX.equalTo(safeAreaLayoutGuide)
-            make.top.equalTo(safeAreaLayoutGuide).offset(100)
-        }
-        
         lineChart.snp.makeConstraints { make in
-            make.leading.equalTo(safeAreaLayoutGuide)
+            make.leading.trailing.centerY.equalToSuperview()
             make.height.equalToSuperview().dividedBy(2)
-            make.bottom.equalTo(safeAreaLayoutGuide).offset(-100)
-            make.centerX.equalTo(passMessageButton.snp.centerX)
         }
     }
     

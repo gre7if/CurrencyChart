@@ -16,11 +16,9 @@ class PairsDataProvider {
         AF.request(urlString)
             .validate()
             .responseJSON { response in
-                guard let data = response.value else { return }
-                
-                let dataArray = Array(arrayLiteral: data)
-                let stringArray = dataArray.flattenedToStringArray()
-                completion(stringArray)
+                guard let data = response.value as? [[String]] else { return }
+                let dataArray: [String] = data.flatMap { $0 }
+                completion(dataArray)
             }
     }
 }

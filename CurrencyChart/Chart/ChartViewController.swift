@@ -11,13 +11,10 @@ import Starscream
 
 class ChartViewController: UIViewController {
     
-    // Chart
     var pair = String()
-    private let contentView = ChartView()
-    private var passMessageButton: UIButton { contentView.passMessageButton }
+    private lazy var contentView = ChartView()
     private var counter = 0.0
 
-    // WebSocket
     private let urlString = "wss://api-pub.bitfinex.com/ws/2"
     private lazy var socket: WebSocket = {
         var request = URLRequest(url: URL(string: urlString)!)
@@ -53,11 +50,9 @@ class ChartViewController: UIViewController {
         
         socket.delegate = self
         socket.connect()
-                
-        passMessageButton.addTarget(self, action: #selector(sendMessageToWebSocket), for: .touchUpInside)
     }
     
-    @objc private func sendMessageToWebSocket() {
+    private func sendMessageToWebSocket() {
         let msgDic = [
             "event": "subscribe",
             "channel": "ticker",
@@ -80,6 +75,8 @@ extension ChartViewController: WebSocketDelegate {
         switch event {
         case .connected:
             print("\nWebsocket is connected")
+            sendMessageToWebSocket()
+            
         case .disconnected(let reason, let code):
             print("\nWebsocket is disconnected: \(reason) with code: \(code)")
             
@@ -91,7 +88,7 @@ extension ChartViewController: WebSocketDelegate {
             else {
                 return
             }
-            let currencyPair = jsonArray.flattenedToDoubleArray()
+            let currencyPair: [Double] = jsonArray.flattenedToArray()
             guard let lastPrice = currencyPair[safe: 7] else { return }
             print("Last price of \(pair): \(lastPrice)")
             counter += 1

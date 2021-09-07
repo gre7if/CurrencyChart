@@ -111,7 +111,6 @@ extension PairsViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        // возвращаем начальный запрос
         pairsModel = pairsModelsSaved
         tableView.reloadData()
     }
