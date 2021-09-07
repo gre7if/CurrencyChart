@@ -18,6 +18,7 @@
 		4A8B8D2926E697CA000BE610 /* PairsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2826E697CA000BE610 /* PairsTableViewCell.swift */; };
 		4A8B8D2D26E69CE9000BE610 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2C26E69CE9000BE610 /* CollectionExtensions.swift */; };
 		4A8B8D2F26E69DE5000BE610 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2E26E69DE5000BE610 /* ChartView.swift */; };
+		4AF7B84126E7898B00D9F20B /* Screenshots in Resources */ = {isa = PBXBuildFile; fileRef = 4AF7B84026E7898B00D9F20B /* Screenshots */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4A8B8D2826E697CA000BE610 /* PairsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsTableViewCell.swift; sourceTree = "<group>"; };
 		4A8B8D2C26E69CE9000BE610 /* CollectionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
 		4A8B8D2E26E69DE5000BE610 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		4AF7B84026E7898B00D9F20B /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Screenshots; sourceTree = "<group>"; };
 		938168D7E455E35D3311C8BE /* Pods_CurrencyChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA359BEDDF9D7C03CB5BF0DA /* Pods-CurrencyChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyChart.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyChart/Pods-CurrencyChart.debug.xcconfig"; sourceTree = "<group>"; };
 		F3CB4DC7A4628830B43DBF4E /* Pods-CurrencyChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyChart.release.xcconfig"; path = "Target Support Files/Pods-CurrencyChart/Pods-CurrencyChart.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				4A8B8D0826E69129000BE610 /* CurrencyChart */,
+				4AF7B84026E7898B00D9F20B /* Screenshots */,
 				4A8B8D0726E69129000BE610 /* Products */,
 				C918DC170EF8E48910F67E50 /* Pods */,
 				730E6C6AD92E2FF0231E0651 /* Frameworks */,
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8B8D1626E6912D000BE610 /* LaunchScreen.storyboard in Resources */,
+				4AF7B84126E7898B00D9F20B /* Screenshots in Resources */,
 				4A8B8D1326E6912D000BE610 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
