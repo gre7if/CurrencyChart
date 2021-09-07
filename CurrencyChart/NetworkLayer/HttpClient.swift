@@ -1,5 +1,5 @@
 //
-//  PairsDataProvider.swift
+//  HttpClient.swift
 //  CurrencyChart
 //
 //  Created by Rustam Nigmatzyanov on 06.09.2021.
@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class PairsDataProvider {
+class HttpClient {
     
     private let urlString = "https://api-pub.bitfinex.com/v2/conf/pub:list:pair:exchange"
     

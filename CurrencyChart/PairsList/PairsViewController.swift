@@ -9,7 +9,7 @@ import UIKit
 
 class PairsViewController: UIViewController {
     
-    private lazy var fetcher = PairsDataProvider()
+    private lazy var fetcher = HttpClient()
     
     var pairsModel: [String] = []
     private var pairsModelsSaved: [String] = []
@@ -61,6 +61,7 @@ class PairsViewController: UIViewController {
 }
 
 extension PairsViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         pairsModel.count
     }
@@ -89,6 +90,7 @@ extension PairsViewController: UITableViewDelegate {
 }
 
 extension PairsViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(reload), object: nil)
         perform(#selector(reload), with: nil, afterDelay: 0.5)
