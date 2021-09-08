@@ -8,6 +8,7 @@
 import UIKit
 
 class PairsTableViewCell: UITableViewCell {
+    
     static let identifier = "PairsTableViewCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

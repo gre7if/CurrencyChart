@@ -10,17 +10,21 @@
 		32347E7A54778649948C3832 /* Pods_CurrencyChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938168D7E455E35D3311C8BE /* Pods_CurrencyChart.framework */; };
 		4A27AD4E26E81E8D00E5F27C /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD4D26E81E8D00E5F27C /* WebSocketClient.swift */; };
 		4A27AD5126E81EEB00E5F27C /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5026E81EEB00E5F27C /* Ticker.swift */; };
-		4A27AD5626E81FBB00E5F27C /* PairsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5526E81FBB00E5F27C /* PairsListPresenter.swift */; };
-		4A27AD5826E81FF400E5F27C /* PairsListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5726E81FF400E5F27C /* PairsListBuilder.swift */; };
+		4A27AD5626E81FBB00E5F27C /* PairsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5526E81FBB00E5F27C /* PairsPresenter.swift */; };
+		4A27AD5826E81FF400E5F27C /* PairsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5726E81FF400E5F27C /* PairsBuilder.swift */; };
 		4A27AD5A26E8201700E5F27C /* ChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5926E8201700E5F27C /* ChartPresenter.swift */; };
 		4A27AD5C26E8203200E5F27C /* ChartBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5B26E8203200E5F27C /* ChartBuilder.swift */; };
-		4A27AD5E26E820E400E5F27C /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5D26E820E400E5F27C /* ChartViewModel.swift */; };
-		4A27AD6026E820EF00E5F27C /* PairsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD5F26E820EF00E5F27C /* PairsListViewModel.swift */; };
+		4A27AD6226E836C900E5F27C /* PairsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6126E836C900E5F27C /* PairsService.swift */; };
+		4A27AD6426E8373400E5F27C /* PairsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6326E8373400E5F27C /* PairsResponse.swift */; };
+		4A27AD6626E8397300E5F27C /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6526E8397300E5F27C /* Mapper.swift */; };
+		4A27AD6926E83EB600E5F27C /* PairsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6826E83EB600E5F27C /* PairsViewModel.swift */; };
+		4A27AD6B26E84BE600E5F27C /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6A26E84BE600E5F27C /* ChartViewModel.swift */; };
+		4A27AD6E26E84C1900E5F27C /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6D26E84C1900E5F27C /* ChartService.swift */; };
 		4A8B8D0A26E69129000BE610 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D0926E69129000BE610 /* AppDelegate.swift */; };
 		4A8B8D1326E6912D000BE610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B8D1226E6912D000BE610 /* Assets.xcassets */; };
 		4A8B8D1626E6912D000BE610 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B8D1426E6912D000BE610 /* LaunchScreen.storyboard */; };
 		4A8B8D1E26E69226000BE610 /* PairsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D1D26E69226000BE610 /* PairsViewController.swift */; };
-		4A8B8D2226E69300000BE610 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2126E69300000BE610 /* HttpClient.swift */; };
+		4A8B8D2226E69300000BE610 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2126E69300000BE610 /* NetworkClient.swift */; };
 		4A8B8D2426E69324000BE610 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2326E69324000BE610 /* ChartViewController.swift */; };
 		4A8B8D2726E6977C000BE610 /* PairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2626E6977C000BE610 /* PairsView.swift */; };
 		4A8B8D2926E697CA000BE610 /* PairsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2826E697CA000BE610 /* PairsTableViewCell.swift */; };
@@ -32,19 +36,23 @@
 /* Begin PBXFileReference section */
 		4A27AD4D26E81E8D00E5F27C /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 		4A27AD5026E81EEB00E5F27C /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
-		4A27AD5526E81FBB00E5F27C /* PairsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsListPresenter.swift; sourceTree = "<group>"; };
-		4A27AD5726E81FF400E5F27C /* PairsListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsListBuilder.swift; sourceTree = "<group>"; };
+		4A27AD5526E81FBB00E5F27C /* PairsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsPresenter.swift; sourceTree = "<group>"; };
+		4A27AD5726E81FF400E5F27C /* PairsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsBuilder.swift; sourceTree = "<group>"; };
 		4A27AD5926E8201700E5F27C /* ChartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPresenter.swift; sourceTree = "<group>"; };
 		4A27AD5B26E8203200E5F27C /* ChartBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBuilder.swift; sourceTree = "<group>"; };
-		4A27AD5D26E820E400E5F27C /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
-		4A27AD5F26E820EF00E5F27C /* PairsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsListViewModel.swift; sourceTree = "<group>"; };
+		4A27AD6126E836C900E5F27C /* PairsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsService.swift; sourceTree = "<group>"; };
+		4A27AD6326E8373400E5F27C /* PairsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsResponse.swift; sourceTree = "<group>"; };
+		4A27AD6526E8397300E5F27C /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		4A27AD6826E83EB600E5F27C /* PairsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsViewModel.swift; sourceTree = "<group>"; };
+		4A27AD6A26E84BE600E5F27C /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		4A27AD6D26E84C1900E5F27C /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		4A8B8D0626E69129000BE610 /* CurrencyChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8B8D0926E69129000BE610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A8B8D1226E6912D000BE610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A8B8D1526E6912D000BE610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A8B8D1726E6912D000BE610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A8B8D1D26E69226000BE610 /* PairsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsViewController.swift; sourceTree = "<group>"; };
-		4A8B8D2126E69300000BE610 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		4A8B8D2126E69300000BE610 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		4A8B8D2326E69324000BE610 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		4A8B8D2626E6977C000BE610 /* PairsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsView.swift; sourceTree = "<group>"; };
 		4A8B8D2826E697CA000BE610 /* PairsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsTableViewCell.swift; sourceTree = "<group>"; };
@@ -68,37 +76,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A27AD4C26E81DEB00E5F27C /* NetworkLayer */ = {
+		4A27AD4C26E81DEB00E5F27C /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
-				4A8B8D2126E69300000BE610 /* HttpClient.swift */,
+				4A8B8D2126E69300000BE610 /* NetworkClient.swift */,
 				4A27AD4D26E81E8D00E5F27C /* WebSocketClient.swift */,
+				4A27AD6526E8397300E5F27C /* Mapper.swift */,
 			);
-			path = NetworkLayer;
+			path = CoreLayer;
 			sourceTree = "<group>";
 		};
-		4A27AD4F26E81ED200E5F27C /* Entities */ = {
+		4A27AD4F26E81ED200E5F27C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				4A27AD5026E81EEB00E5F27C /* Ticker.swift */,
+				4A27AD6326E8373400E5F27C /* PairsResponse.swift */,
 			);
-			path = Entities;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		4A27AD5326E81F2100E5F27C /* ViewModels */ = {
+		4A27AD6726E83EA700E5F27C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4A27AD5D26E820E400E5F27C /* ChartViewModel.swift */,
+				4A27AD6826E83EB600E5F27C /* PairsViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		4A27AD5426E81F2C00E5F27C /* ViewModels */ = {
+		4A27AD6C26E84BE900E5F27C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4A27AD5F26E820EF00E5F27C /* PairsListViewModel.swift */,
+				4A27AD6A26E84BE600E5F27C /* ChartViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4A8B8CFD26E69129000BE610 = {
@@ -123,10 +133,10 @@
 		4A8B8D0826E69129000BE610 /* CurrencyChart */ = {
 			isa = PBXGroup;
 			children = (
-				4A27AD4F26E81ED200E5F27C /* Entities */,
-				4A27AD4C26E81DEB00E5F27C /* NetworkLayer */,
+				4A27AD4F26E81ED200E5F27C /* Models */,
+				4A27AD4C26E81DEB00E5F27C /* CoreLayer */,
 				4A8B8D2526E69327000BE610 /* Chart */,
-				4A8B8D2026E692A6000BE610 /* PairsList */,
+				4A8B8D2026E692A6000BE610 /* Pairs */,
 				4A8B8D2B26E69CD8000BE610 /* Extensions */,
 				4A8B8D1F26E69299000BE610 /* AppSupport */,
 				4A8B8D1726E6912D000BE610 /* Info.plist */,
@@ -144,37 +154,38 @@
 			path = AppSupport;
 			sourceTree = "<group>";
 		};
-		4A8B8D2026E692A6000BE610 /* PairsList */ = {
+		4A8B8D2026E692A6000BE610 /* Pairs */ = {
 			isa = PBXGroup;
 			children = (
-				4A27AD5426E81F2C00E5F27C /* ViewModels */,
-				4A8B8D2A26E697D9000BE610 /* Views */,
-				4A8B8D1D26E69226000BE610 /* PairsViewController.swift */,
-				4A27AD5526E81FBB00E5F27C /* PairsListPresenter.swift */,
-				4A27AD5726E81FF400E5F27C /* PairsListBuilder.swift */,
+				4A27AD6726E83EA700E5F27C /* ViewModel */,
+				4A8B8D2A26E697D9000BE610 /* View */,
+				4A27AD5526E81FBB00E5F27C /* PairsPresenter.swift */,
+				4A27AD5726E81FF400E5F27C /* PairsBuilder.swift */,
+				4A27AD6126E836C900E5F27C /* PairsService.swift */,
 			);
-			path = PairsList;
+			path = Pairs;
 			sourceTree = "<group>";
 		};
 		4A8B8D2526E69327000BE610 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				4A27AD5326E81F2100E5F27C /* ViewModels */,
-				4A8B8D3026E69DF7000BE610 /* Views */,
-				4A8B8D2326E69324000BE610 /* ChartViewController.swift */,
+				4A27AD6C26E84BE900E5F27C /* ViewModel */,
+				4A8B8D3026E69DF7000BE610 /* View */,
 				4A27AD5926E8201700E5F27C /* ChartPresenter.swift */,
 				4A27AD5B26E8203200E5F27C /* ChartBuilder.swift */,
+				4A27AD6D26E84C1900E5F27C /* ChartService.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
 		};
-		4A8B8D2A26E697D9000BE610 /* Views */ = {
+		4A8B8D2A26E697D9000BE610 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4A8B8D2826E697CA000BE610 /* PairsTableViewCell.swift */,
 				4A8B8D2626E6977C000BE610 /* PairsView.swift */,
+				4A8B8D1D26E69226000BE610 /* PairsViewController.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4A8B8D2B26E69CD8000BE610 /* Extensions */ = {
@@ -185,12 +196,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4A8B8D3026E69DF7000BE610 /* Views */ = {
+		4A8B8D3026E69DF7000BE610 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4A8B8D2E26E69DE5000BE610 /* ChartView.swift */,
+				4A8B8D2326E69324000BE610 /* ChartViewController.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		730E6C6AD92E2FF0231E0651 /* Frameworks */ = {
@@ -324,22 +336,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A27AD5E26E820E400E5F27C /* ChartViewModel.swift in Sources */,
+				4A27AD6E26E84C1900E5F27C /* ChartService.swift in Sources */,
 				4A8B8D2726E6977C000BE610 /* PairsView.swift in Sources */,
 				4A8B8D2D26E69CE9000BE610 /* CollectionExtensions.swift in Sources */,
 				4A8B8D2926E697CA000BE610 /* PairsTableViewCell.swift in Sources */,
 				4A8B8D2F26E69DE5000BE610 /* ChartView.swift in Sources */,
-				4A27AD6026E820EF00E5F27C /* PairsListViewModel.swift in Sources */,
 				4A27AD5C26E8203200E5F27C /* ChartBuilder.swift in Sources */,
-				4A8B8D2226E69300000BE610 /* HttpClient.swift in Sources */,
+				4A27AD6B26E84BE600E5F27C /* ChartViewModel.swift in Sources */,
+				4A27AD6426E8373400E5F27C /* PairsResponse.swift in Sources */,
+				4A8B8D2226E69300000BE610 /* NetworkClient.swift in Sources */,
 				4A27AD4E26E81E8D00E5F27C /* WebSocketClient.swift in Sources */,
 				4A8B8D2426E69324000BE610 /* ChartViewController.swift in Sources */,
-				4A27AD5826E81FF400E5F27C /* PairsListBuilder.swift in Sources */,
+				4A27AD5826E81FF400E5F27C /* PairsBuilder.swift in Sources */,
 				4A27AD5126E81EEB00E5F27C /* Ticker.swift in Sources */,
-				4A27AD5626E81FBB00E5F27C /* PairsListPresenter.swift in Sources */,
+				4A27AD5626E81FBB00E5F27C /* PairsPresenter.swift in Sources */,
 				4A8B8D1E26E69226000BE610 /* PairsViewController.swift in Sources */,
 				4A8B8D0A26E69129000BE610 /* AppDelegate.swift in Sources */,
 				4A27AD5A26E8201700E5F27C /* ChartPresenter.swift in Sources */,
+				4A27AD6226E836C900E5F27C /* PairsService.swift in Sources */,
+				4A27AD6926E83EB600E5F27C /* PairsViewModel.swift in Sources */,
+				4A27AD6626E8397300E5F27C /* Mapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

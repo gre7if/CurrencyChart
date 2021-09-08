@@ -5,8 +5,12 @@
 //  Created by Rustam Nigmatzyanov on 08.09.2021.
 //
 
-import Foundation
+import Starscream
 
-class WebSocketClient {
+protocol WebSocketProtocol {
+    
+}
+
+class WebSocketClient: WebSocketProtocol {
     
 }

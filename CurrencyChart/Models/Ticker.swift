@@ -19,4 +19,18 @@ struct Ticker {
     let volume: Double
     let high: Double
     let low: Double
+    
+    enum ArrayIndex: Int {
+        case channelId
+        case bid
+        case bidSize
+        case ask
+        case askSize
+        case dailyChange
+        case dailyChangePercent
+        case lastPrice
+        case volume
+        case high
+        case low
+    }
 }

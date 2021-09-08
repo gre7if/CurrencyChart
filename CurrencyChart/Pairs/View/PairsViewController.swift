@@ -7,19 +7,42 @@
 
 import UIKit
 
-class PairsViewController: UIViewController {
+protocol PairsViewControllerInput: AnyObject {
+    func configureUI()
+    func setupView(viewModel: PairsViewModel)
+    func reloadView()
+    func stopActivityIndicator()
+}
+
+protocol PairsViewControllerOutput {
+    func prepareData()
+}
+
+class PairsViewController: UIViewController, PairsViewControllerInput {
     
-    private lazy var fetcher = HttpClient()
-    
-    var pairsModel: [String] = []
-    private var pairsModelsSaved: [String] = []
-    
-    private let contentView = PairsView()
+    var output: PairsViewControllerOutput!
+    var viewModel: PairsViewModel!
+    private var searchControllerViewModel: [String] = []
+        
+    private lazy var contentView = PairsView()
     private let searchController = UISearchController(searchResultsController: nil)
     private var tableView: UITableView { contentView.tableView }
     private var spinner: UIActivityIndicatorView { contentView.spinner }
     
-    private func configureUI() {
+    func setupView(viewModel: PairsViewModel) {
+        self.viewModel = viewModel
+        searchControllerViewModel = viewModel.getItems()
+    }
+    
+    func reloadView() {
+        tableView.reloadData()
+    }
+    
+    func stopActivityIndicator() {
+        spinner.stopAnimating()
+    }
+    
+    func configureUI() {
         title = "Currency pairs"
         navigationController?.navigationBar.prefersLargeTitles = true
         // убираем полупрозрачность заголовка
@@ -37,7 +60,7 @@ class PairsViewController: UIViewController {
         navigationController?.definesPresentationContext = true
         tableView.delegate = self
         tableView.dataSource = self
-}
+     }
     
     override func loadView() {
         view = contentView
@@ -47,29 +70,21 @@ class PairsViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
-        
         spinner.startAnimating()
-        fetcher.fetchPairsList { pairs in
-            DispatchQueue.main.async {
-                self.pairsModel = pairs
-                self.pairsModelsSaved = pairs
-                self.spinner.stopAnimating()
-                self.tableView.reloadData()
-            }
-        }
+        output.prepareData()
     }
 }
 
 extension PairsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        pairsModel.count
+        viewModel.numberOfItems()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: PairsTableViewCell.identifier, for: indexPath) as? PairsTableViewCell,
-            let pair = pairsModel[safe: indexPath.row]
+            let pair = viewModel.getItem(index: indexPath.row)
         else {
             return UITableViewCell()
         }
@@ -79,10 +94,11 @@ extension PairsViewController: UITableViewDataSource {
 }
 
 extension PairsViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let pair = pairsModel[safe: indexPath.row] else { return }
+        guard let pair = viewModel.getItem(index: indexPath.row) else { return }
         let chartVC = ChartViewController()
         chartVC.pair = pair
         navigationController?.pushViewController(chartVC, animated: true)
@@ -101,19 +117,20 @@ extension PairsViewController: UISearchBarDelegate {
         
         if !text.isEmpty {
             // делаем новый запрос
-            pairsModel = pairsModelsSaved.filter {
+            let searchedPairs = searchControllerViewModel.filter {
                 $0.localizedCaseInsensitiveContains(text)
             }
+            viewModel = PairsViewModel(pairs: searchedPairs)
             tableView.reloadData()
         } else {
             // возвращаем начальный запрос
-            pairsModel = pairsModelsSaved
+            viewModel = PairsViewModel(pairs: searchControllerViewModel)
             tableView.reloadData()
         }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        pairsModel = pairsModelsSaved
+        viewModel = PairsViewModel(pairs: searchControllerViewModel)
         tableView.reloadData()
     }
 }
