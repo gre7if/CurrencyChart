@@ -10,22 +10,19 @@ import Foundation
 class PairsBuilder {
     
     static func build() -> PairsViewController {
-        let viewController = PairsViewController()
-    
+        
         let networkClient = NetworkClient()
         let mapper = Mapper()
         
-        let service = PairsService()
-        service.networkClient = networkClient
-        service.mapper = mapper
+        let service = PairsService(networkClient: networkClient, mapper: mapper)
         
-        let presenter = PairsPresenter()
-        presenter.service = service
-        presenter.view = viewController
+        let presenter = PairsPresenter(service: service)
         
         let viewModel = PairsViewModel(pairs: nil)
-        viewController.output = presenter
-        viewController.viewModel = viewModel
+        
+        let viewController = PairsViewController(output: presenter, viewModel: viewModel)
+        
+        presenter.view = viewController
         
         return viewController
     }

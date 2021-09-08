@@ -20,14 +20,24 @@ protocol PairsViewControllerOutput {
 
 class PairsViewController: UIViewController, PairsViewControllerInput {
     
-    var output: PairsViewControllerOutput!
-    var viewModel: PairsViewModel!
+    var output: PairsViewControllerOutput
+    var viewModel: PairsViewModel
     private var searchControllerViewModel: [String] = []
         
     private lazy var contentView = PairsView()
     private let searchController = UISearchController(searchResultsController: nil)
     private var tableView: UITableView { contentView.tableView }
     private var spinner: UIActivityIndicatorView { contentView.spinner }
+    
+    init(output: PairsViewControllerOutput, viewModel: PairsViewModel) {
+        self.output = output
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func setupView(viewModel: PairsViewModel) {
         self.viewModel = viewModel

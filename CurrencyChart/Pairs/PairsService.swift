@@ -13,8 +13,13 @@ protocol PairsServiceProtocol {
 
 class PairsService: PairsServiceProtocol {
     
-    var networkClient: Network!
-    var mapper: Mapper!
+    var networkClient: Network
+    var mapper: Mapper
+    
+    init(networkClient: Network, mapper: Mapper) {
+        self.networkClient = networkClient
+        self.mapper = mapper
+    }
     
     func updatePairsList(_ completion: @escaping (PairsResponse) -> Void) {
         networkClient.loadData { [unowned self] result in
