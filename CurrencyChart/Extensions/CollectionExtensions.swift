@@ -15,7 +15,7 @@ extension Collection {
 }
 
 extension Array {
-
+    /// Flattens many arrays into one.
     func flattenedToArray<ReturnType>() -> [ReturnType] {
         reduce([]) { result, element in
             if let value = element as? ReturnType {

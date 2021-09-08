@@ -12,7 +12,7 @@ class PairsBuilder {
     static func build() -> PairsViewController {
         
         let networkClient = NetworkClient()
-        let mapper = Mapper()
+        let mapper = PairsMapper()
         
         let service = PairsService(networkClient: networkClient, mapper: mapper)
         

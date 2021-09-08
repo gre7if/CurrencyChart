@@ -14,9 +14,9 @@ protocol PairsServiceProtocol {
 class PairsService: PairsServiceProtocol {
     
     var networkClient: Network
-    var mapper: Mapper
+    var mapper: PairsMapper
     
-    init(networkClient: Network, mapper: Mapper) {
+    init(networkClient: Network, mapper: PairsMapper) {
         self.networkClient = networkClient
         self.mapper = mapper
     }

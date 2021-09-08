@@ -109,7 +109,7 @@ extension PairsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let pair = viewModel.getPair(index: indexPath.row) else { return }
-        let chartVC = ChartViewController()
+        let chartVC = ChartBuilder.build()
         chartVC.pair = pair
         navigationController?.pushViewController(chartVC, animated: true)
     }
