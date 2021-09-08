@@ -12,6 +12,7 @@ protocol MapperProtocol {
 }
 
 class Mapper: MapperProtocol {
+    // parse Any to our Model
     func map(data: Any?) -> PairsResponse? {
         guard let data = data as? [[String]] else { return nil }
         let dataArray: [String] = data.flatMap { $0 }

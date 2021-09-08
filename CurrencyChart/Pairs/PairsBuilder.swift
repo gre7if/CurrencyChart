@@ -20,7 +20,7 @@ class PairsBuilder {
         
         let viewModel = PairsViewModel(pairs: nil)
         
-        let viewController = PairsViewController(output: presenter, viewModel: viewModel)
+        let viewController = PairsViewController(presenter: presenter, viewModel: viewModel)
         
         presenter.view = viewController
         

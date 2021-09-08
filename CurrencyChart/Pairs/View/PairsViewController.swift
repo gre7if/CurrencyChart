@@ -8,10 +8,10 @@
 import UIKit
 
 protocol PairsViewControllerInput: AnyObject {
-    func configureUI()
     func setupView(viewModel: PairsViewModel)
     func reloadView()
     func stopActivityIndicator()
+    func configureUI()
 }
 
 protocol PairsViewControllerOutput {
@@ -20,7 +20,7 @@ protocol PairsViewControllerOutput {
 
 class PairsViewController: UIViewController, PairsViewControllerInput {
     
-    var output: PairsViewControllerOutput
+    var presenter: PairsViewControllerOutput
     var viewModel: PairsViewModel
     private var searchControllerViewModel: [String] = []
         
@@ -29,8 +29,8 @@ class PairsViewController: UIViewController, PairsViewControllerInput {
     private var tableView: UITableView { contentView.tableView }
     private var spinner: UIActivityIndicatorView { contentView.spinner }
     
-    init(output: PairsViewControllerOutput, viewModel: PairsViewModel) {
-        self.output = output
+    init(presenter: PairsViewControllerOutput, viewModel: PairsViewModel) {
+        self.presenter = presenter
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,7 +41,7 @@ class PairsViewController: UIViewController, PairsViewControllerInput {
     
     func setupView(viewModel: PairsViewModel) {
         self.viewModel = viewModel
-        searchControllerViewModel = viewModel.getItems()
+        searchControllerViewModel = viewModel.getPairs()
     }
     
     func reloadView() {
@@ -81,20 +81,20 @@ class PairsViewController: UIViewController, PairsViewControllerInput {
         
         configureUI()
         spinner.startAnimating()
-        output.prepareData()
+        presenter.prepareData()
     }
 }
 
 extension PairsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfItems()
+        viewModel.numberOfPairs()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: PairsTableViewCell.identifier, for: indexPath) as? PairsTableViewCell,
-            let pair = viewModel.getItem(index: indexPath.row)
+            let pair = viewModel.getPair(index: indexPath.row)
         else {
             return UITableViewCell()
         }
@@ -108,7 +108,7 @@ extension PairsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let pair = viewModel.getItem(index: indexPath.row) else { return }
+        guard let pair = viewModel.getPair(index: indexPath.row) else { return }
         let chartVC = ChartViewController()
         chartVC.pair = pair
         navigationController?.pushViewController(chartVC, animated: true)

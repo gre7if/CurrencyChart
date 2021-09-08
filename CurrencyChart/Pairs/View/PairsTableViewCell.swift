@@ -13,7 +13,6 @@ class PairsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        
         // тип ячейки - со стрелочкой в правой части
         accessoryType = .disclosureIndicator
     }

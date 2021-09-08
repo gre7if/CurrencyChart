@@ -15,17 +15,17 @@ struct PairsViewModel {
         self.pairs = pairs
     }
     
-    func numberOfItems() -> Int {
+    func numberOfPairs() -> Int {
         guard let pairs = pairs else { return 0 }
         return pairs.count
     }
     
-    func getItem(index: Int) -> String? {
+    func getPair(index: Int) -> String? {
         guard let pairs = pairs else { return "" }
         return pairs[safe: index]
     }
     
-    func getItems() -> [String] {
+    func getPairs() -> [String] {
         guard let pairs = pairs else { return [] }
         return pairs
     }
