@@ -94,11 +94,11 @@ extension PairsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: PairsTableViewCell.identifier, for: indexPath) as? PairsTableViewCell,
-            let pair = viewModel.getPair(index: indexPath.row)
+            var pair = viewModel.getPair(index: indexPath.row)
         else {
             return UITableViewCell()
         }
-        cell.configureCell(with: pair)
+        cell.configureCell(with: pair.formattedPair())
         return cell
     }
 }

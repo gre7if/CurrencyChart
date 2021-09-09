@@ -32,6 +32,7 @@
 		4A8B8D2926E697CA000BE610 /* PairsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2826E697CA000BE610 /* PairsTableViewCell.swift */; };
 		4A8B8D2D26E69CE9000BE610 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2C26E69CE9000BE610 /* CollectionExtensions.swift */; };
 		4A8B8D2F26E69DE5000BE610 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B8D2E26E69DE5000BE610 /* ChartView.swift */; };
+		4A900ED926EA964A00448870 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A900ED826EA964A00448870 /* StringExtensions.swift */; };
 		4AF7B84126E7898B00D9F20B /* Screenshots in Resources */ = {isa = PBXBuildFile; fileRef = 4AF7B84026E7898B00D9F20B /* Screenshots */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		4A8B8D2826E697CA000BE610 /* PairsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsTableViewCell.swift; sourceTree = "<group>"; };
 		4A8B8D2C26E69CE9000BE610 /* CollectionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
 		4A8B8D2E26E69DE5000BE610 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		4A900ED826EA964A00448870 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		4AF7B84026E7898B00D9F20B /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Screenshots; sourceTree = "<group>"; };
 		938168D7E455E35D3311C8BE /* Pods_CurrencyChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA359BEDDF9D7C03CB5BF0DA /* Pods-CurrencyChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyChart.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyChart/Pods-CurrencyChart.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				4A8B8D2C26E69CE9000BE610 /* CollectionExtensions.swift */,
 				4A87131426E9107D004ADDA9 /* NotificationExtensions.swift */,
+				4A900ED826EA964A00448870 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				4A27AD6426E8373400E5F27C /* PairsResponse.swift in Sources */,
 				4A8B8D2226E69300000BE610 /* NetworkClient.swift in Sources */,
 				4A27AD4E26E81E8D00E5F27C /* WebSocketClient.swift in Sources */,
+				4A900ED926EA964A00448870 /* StringExtensions.swift in Sources */,
 				4A8B8D2426E69324000BE610 /* ChartViewController.swift in Sources */,
 				4A27AD5826E81FF400E5F27C /* PairsBuilder.swift in Sources */,
 				4A27AD5126E81EEB00E5F27C /* Ticker.swift in Sources */,
