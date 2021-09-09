@@ -43,7 +43,7 @@ class ChartViewController: UIViewController, ChartViewControllerInput {
     }
     
     func configureUI() {
-        title = pair
+        title = pair.formattedPair()
         navigationItem.largeTitleDisplayMode = .never
         view.backgroundColor = .white
     }
@@ -56,7 +56,7 @@ class ChartViewController: UIViewController, ChartViewControllerInput {
         super.viewDidLoad()
         
         configureUI()
-        presenter.prepareData(pair: pair)
+        presenter.prepareData(pair: pair.formattedPairForRequest())
     }
 }
 

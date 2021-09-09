@@ -94,7 +94,7 @@ extension PairsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: PairsTableViewCell.identifier, for: indexPath) as? PairsTableViewCell,
-            var pair = viewModel.getPair(index: indexPath.row)
+            let pair = viewModel.getPair(index: indexPath.row)
         else {
             return UITableViewCell()
         }

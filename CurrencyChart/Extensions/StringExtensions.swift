@@ -8,13 +8,22 @@
 import Foundation
 
 extension String {
-    mutating func formattedPair() -> String {
-        if let indexOfColon = self.firstIndex(of: ":") {
-            self.remove(at: indexOfColon)
-            self.insert("/", at: indexOfColon)
+    func formattedPair() -> String {
+        var pair = self
+        if let indexOfColon = pair.firstIndex(of: ":") {
+            pair.remove(at: indexOfColon)
+            pair.insert("/", at: indexOfColon)
         } else {
-            self.insert("/", at: self.index(self.startIndex, offsetBy: 3))
+            pair.insert("/", at: pair.index(pair.startIndex, offsetBy: 3))
         }
-        return self
+        return pair
+    }
+    
+    func formattedPairForRequest() -> String {
+        var pair = self
+        if let indexOfColon = pair.firstIndex(of: ":") {
+            pair.remove(at: indexOfColon)
+        }
+        return pair
     }
 }
