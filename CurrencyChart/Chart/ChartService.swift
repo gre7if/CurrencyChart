@@ -14,8 +14,8 @@ protocol ChartServiceProtocol {
 
 class ChartService: ChartServiceProtocol {
     
-    var networkClient: WebSocketProtocol
-    var mapper: ChartMapper
+    private let networkClient: WebSocketProtocol
+    private let mapper: ChartMapper
     
     init(networkClient: WebSocketProtocol, mapper: ChartMapper) {
         self.networkClient = networkClient

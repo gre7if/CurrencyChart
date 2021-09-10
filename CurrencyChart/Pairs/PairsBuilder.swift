@@ -17,10 +17,8 @@ class PairsBuilder {
         let service = PairsService(networkClient: networkClient, mapper: mapper)
         
         let presenter = PairsPresenter(service: service)
-        
-        let viewModel = PairsViewModel(pairs: nil)
-        
-        let viewController = PairsViewController(presenter: presenter, viewModel: viewModel)
+                
+        let viewController = PairsViewController(presenter: presenter)
         
         presenter.view = viewController
         

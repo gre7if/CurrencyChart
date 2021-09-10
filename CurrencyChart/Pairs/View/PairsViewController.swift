@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PairsViewControllerInput: AnyObject {
-    func setupView(viewModel: PairsViewModel)
+    func setupView(viewModel: [String])
     func reloadView()
     func stopActivityIndicator()
     func configureUI()
@@ -21,7 +21,7 @@ protocol PairsViewControllerOutput {
 class PairsViewController: UIViewController, PairsViewControllerInput {
     
     var presenter: PairsViewControllerOutput
-    var viewModel: PairsViewModel
+    private var viewModel: [String] = []
     private var searchControllerViewModel: [String] = []
         
     private lazy var contentView = PairsView()
@@ -29,9 +29,8 @@ class PairsViewController: UIViewController, PairsViewControllerInput {
     private var tableView: UITableView { contentView.tableView }
     private var spinner: UIActivityIndicatorView { contentView.spinner }
     
-    init(presenter: PairsViewControllerOutput, viewModel: PairsViewModel) {
+    init(presenter: PairsViewControllerOutput) {
         self.presenter = presenter
-        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,9 +38,9 @@ class PairsViewController: UIViewController, PairsViewControllerInput {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupView(viewModel: PairsViewModel) {
+    func setupView(viewModel: [String]) {
         self.viewModel = viewModel
-        searchControllerViewModel = viewModel.getPairs()
+        searchControllerViewModel = viewModel
     }
     
     func reloadView() {
@@ -88,13 +87,13 @@ class PairsViewController: UIViewController, PairsViewControllerInput {
 extension PairsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfPairs()
+        viewModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: PairsTableViewCell.identifier, for: indexPath) as? PairsTableViewCell,
-            let pair = viewModel.getPair(index: indexPath.row)
+            let pair = viewModel[safe: indexPath.row]
         else {
             return UITableViewCell()
         }
@@ -108,7 +107,7 @@ extension PairsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let pair = viewModel.getPair(index: indexPath.row) else { return }
+        guard let pair = viewModel[safe: indexPath.row] else { return }
         let chartVC = ChartBuilder.build()
         chartVC.pair = pair
         navigationController?.pushViewController(chartVC, animated: true)
@@ -130,17 +129,17 @@ extension PairsViewController: UISearchBarDelegate {
             let searchedPairs = searchControllerViewModel.filter {
                 $0.localizedCaseInsensitiveContains(text)
             }
-            viewModel = PairsViewModel(pairs: searchedPairs)
+            viewModel = searchedPairs
             tableView.reloadData()
         } else {
             // возвращаем начальный запрос
-            viewModel = PairsViewModel(pairs: searchControllerViewModel)
+            viewModel = searchControllerViewModel
             tableView.reloadData()
         }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel = PairsViewModel(pairs: searchControllerViewModel)
+        viewModel = searchControllerViewModel
         tableView.reloadData()
     }
 }

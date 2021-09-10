@@ -17,7 +17,6 @@
 		4A27AD6226E836C900E5F27C /* PairsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6126E836C900E5F27C /* PairsService.swift */; };
 		4A27AD6426E8373400E5F27C /* PairsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6326E8373400E5F27C /* PairsResponse.swift */; };
 		4A27AD6626E8397300E5F27C /* PairsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6526E8397300E5F27C /* PairsMapper.swift */; };
-		4A27AD6926E83EB600E5F27C /* PairsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6826E83EB600E5F27C /* PairsViewModel.swift */; };
 		4A27AD6B26E84BE600E5F27C /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6A26E84BE600E5F27C /* ChartViewModel.swift */; };
 		4A27AD6E26E84C1900E5F27C /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6D26E84C1900E5F27C /* ChartService.swift */; };
 		4A87131526E9107D004ADDA9 /* NotificationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A87131426E9107D004ADDA9 /* NotificationExtensions.swift */; };
@@ -46,7 +45,6 @@
 		4A27AD6126E836C900E5F27C /* PairsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsService.swift; sourceTree = "<group>"; };
 		4A27AD6326E8373400E5F27C /* PairsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsResponse.swift; sourceTree = "<group>"; };
 		4A27AD6526E8397300E5F27C /* PairsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsMapper.swift; sourceTree = "<group>"; };
-		4A27AD6826E83EB600E5F27C /* PairsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsViewModel.swift; sourceTree = "<group>"; };
 		4A27AD6A26E84BE600E5F27C /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		4A27AD6D26E84C1900E5F27C /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		4A87131426E9107D004ADDA9 /* NotificationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtensions.swift; sourceTree = "<group>"; };
@@ -100,14 +98,6 @@
 				4A27AD6326E8373400E5F27C /* PairsResponse.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		4A27AD6726E83EA700E5F27C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				4A27AD6826E83EB600E5F27C /* PairsViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4A27AD6C26E84BE900E5F27C /* ViewModel */ = {
@@ -164,7 +154,6 @@
 		4A8B8D2026E692A6000BE610 /* Pairs */ = {
 			isa = PBXGroup;
 			children = (
-				4A27AD6726E83EA700E5F27C /* ViewModel */,
 				4A8B8D2A26E697D9000BE610 /* View */,
 				4A27AD5726E81FF400E5F27C /* PairsBuilder.swift */,
 				4A27AD5526E81FBB00E5F27C /* PairsPresenter.swift */,
@@ -366,7 +355,6 @@
 				4A8B8D0A26E69129000BE610 /* AppDelegate.swift in Sources */,
 				4A27AD5A26E8201700E5F27C /* ChartPresenter.swift in Sources */,
 				4A27AD6226E836C900E5F27C /* PairsService.swift in Sources */,
-				4A27AD6926E83EB600E5F27C /* PairsViewModel.swift in Sources */,
 				4A27AD6626E8397300E5F27C /* PairsMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

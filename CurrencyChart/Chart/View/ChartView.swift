@@ -58,7 +58,6 @@ class ChartView: UIView {
     private func setLineChart() {
         let set = LineChartDataSet()
         set.setCircleColor(.red)
-//        set.drawCirclesEnabled = false
         set.mode = .cubicBezier
         set.lineWidth = 1
         set.setColor(.systemGreen)
@@ -71,8 +70,7 @@ class ChartView: UIView {
     }
     
     func update(viewModel: ChartViewModel) {
-        guard let x = viewModel.x, let y = viewModel.y else { return }
-        let entry = ChartDataEntry(x: x, y: y)
+        let entry = ChartDataEntry(x: viewModel.x, y: viewModel.y)
         lineChart.data?.addEntry(entry, dataSetIndex: 0)
         lineChart.data?.notifyDataChanged()
         lineChart.notifyDataSetChanged()

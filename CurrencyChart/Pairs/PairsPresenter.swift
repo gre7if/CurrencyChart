@@ -10,7 +10,7 @@ import Foundation
 class PairsPresenter: PairsViewControllerOutput {
     
     weak var view: PairsViewControllerInput?
-    var service: PairsService
+    private var service: PairsService
     
     init(service: PairsService) {
         self.service = service
@@ -19,12 +19,10 @@ class PairsPresenter: PairsViewControllerOutput {
     func prepareData() {
         service.updatePairsList { [weak self] result in
             guard
-                let pairs = result.pairs,
                 let self = self,
                 let view = self.view
             else { return }
-            let viewModel = PairsViewModel(pairs: pairs)
-            view.setupView(viewModel: viewModel)
+            view.setupView(viewModel: result.pairs)
             view.stopActivityIndicator()
             view.reloadView()
         }

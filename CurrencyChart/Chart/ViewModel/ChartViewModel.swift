@@ -8,6 +8,6 @@
 import Foundation
 
 struct ChartViewModel {
-    let x: Double?
-    let y: Double?
+    let x: Double
+    let y: Double
 }

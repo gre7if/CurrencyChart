@@ -13,8 +13,8 @@ protocol PairsServiceProtocol {
 
 class PairsService: PairsServiceProtocol {
     
-    var networkClient: Network
-    var mapper: PairsMapper
+    private let networkClient: Network
+    private let mapper: PairsMapper
     
     init(networkClient: Network, mapper: PairsMapper) {
         self.networkClient = networkClient

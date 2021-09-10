@@ -10,7 +10,7 @@ import Foundation
 class ChartPresenter: ChartViewControllerOutput {
         
     weak var view: ChartViewControllerInput?
-    var service: ChartService
+    private var service: ChartService
     
     private var counter = 0.0
     
@@ -21,13 +21,12 @@ class ChartPresenter: ChartViewControllerOutput {
     func prepareData(pair: String) {
         service.updateChart(pair: pair) { [weak self] result in
             guard
-                let lastPrice = result.lastPrice,
                 let self = self,
                 let view = self.view
             else { return }
-            print("Last price of \(pair): \(lastPrice)")
+            print("Last price of \(pair): \(result.lastPrice)")
             self.counter += 1
-            let viewModel = ChartViewModel(x: self.counter, y: lastPrice)
+            let viewModel = ChartViewModel(x: self.counter, y: result.lastPrice)
             view.setupView(viewModel: viewModel)
         }
     }

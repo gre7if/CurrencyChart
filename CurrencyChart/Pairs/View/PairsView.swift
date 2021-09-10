@@ -19,7 +19,6 @@ class PairsView: UIView {
     
     private(set) lazy var spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .medium)
-        spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.hidesWhenStopped = true
         return spinner
     }()
@@ -45,7 +44,7 @@ class PairsView: UIView {
         }
         
         tableView.snp.makeConstraints { make in
-            make.top.leading.bottom.trailing.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
 }

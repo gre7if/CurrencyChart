@@ -8,5 +8,5 @@
 import Foundation
 
 struct PairsResponse {
-    let pairs: [String]?
+    let pairs: [String]
 }
