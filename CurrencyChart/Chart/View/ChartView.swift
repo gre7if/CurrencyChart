@@ -69,7 +69,7 @@ class ChartView: UIView {
         lineChart.data = data
     }
     
-    func update(viewModel: ChartViewModel) {
+    func update(viewModel: PointViewModel) {
         let entry = ChartDataEntry(x: viewModel.x, y: viewModel.y)
         lineChart.data?.addEntry(entry, dataSetIndex: 0)
         lineChart.data?.notifyDataChanged()

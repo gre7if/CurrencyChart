@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChartViewModel {
+struct PointViewModel {
     let x: Double
     let y: Double
 }

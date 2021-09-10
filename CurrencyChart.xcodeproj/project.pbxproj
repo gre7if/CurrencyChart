@@ -17,7 +17,7 @@
 		4A27AD6226E836C900E5F27C /* PairsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6126E836C900E5F27C /* PairsService.swift */; };
 		4A27AD6426E8373400E5F27C /* PairsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6326E8373400E5F27C /* PairsResponse.swift */; };
 		4A27AD6626E8397300E5F27C /* PairsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6526E8397300E5F27C /* PairsMapper.swift */; };
-		4A27AD6B26E84BE600E5F27C /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6A26E84BE600E5F27C /* ChartViewModel.swift */; };
+		4A27AD6B26E84BE600E5F27C /* PointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6A26E84BE600E5F27C /* PointViewModel.swift */; };
 		4A27AD6E26E84C1900E5F27C /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27AD6D26E84C1900E5F27C /* ChartService.swift */; };
 		4A87131526E9107D004ADDA9 /* NotificationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A87131426E9107D004ADDA9 /* NotificationExtensions.swift */; };
 		4A87131926E918F2004ADDA9 /* ChartMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A87131826E918F2004ADDA9 /* ChartMapper.swift */; };
@@ -45,7 +45,7 @@
 		4A27AD6126E836C900E5F27C /* PairsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsService.swift; sourceTree = "<group>"; };
 		4A27AD6326E8373400E5F27C /* PairsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsResponse.swift; sourceTree = "<group>"; };
 		4A27AD6526E8397300E5F27C /* PairsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsMapper.swift; sourceTree = "<group>"; };
-		4A27AD6A26E84BE600E5F27C /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		4A27AD6A26E84BE600E5F27C /* PointViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointViewModel.swift; sourceTree = "<group>"; };
 		4A27AD6D26E84C1900E5F27C /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		4A87131426E9107D004ADDA9 /* NotificationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtensions.swift; sourceTree = "<group>"; };
 		4A87131826E918F2004ADDA9 /* ChartMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMapper.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		4A27AD6C26E84BE900E5F27C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4A27AD6A26E84BE600E5F27C /* ChartViewModel.swift */,
+				4A27AD6A26E84BE600E5F27C /* PointViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -342,7 +342,7 @@
 				4A87131926E918F2004ADDA9 /* ChartMapper.swift in Sources */,
 				4A8B8D2F26E69DE5000BE610 /* ChartView.swift in Sources */,
 				4A27AD5C26E8203200E5F27C /* ChartBuilder.swift in Sources */,
-				4A27AD6B26E84BE600E5F27C /* ChartViewModel.swift in Sources */,
+				4A27AD6B26E84BE600E5F27C /* PointViewModel.swift in Sources */,
 				4A27AD6426E8373400E5F27C /* PairsResponse.swift in Sources */,
 				4A8B8D2226E69300000BE610 /* NetworkClient.swift in Sources */,
 				4A27AD4E26E81E8D00E5F27C /* WebSocketClient.swift in Sources */,

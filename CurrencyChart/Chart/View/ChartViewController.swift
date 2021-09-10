@@ -10,7 +10,7 @@ import Charts
 
 protocol ChartViewControllerInput: AnyObject {
     func configureUI()
-    func setupView(viewModel: ChartViewModel)
+    func setupView(viewModel: PointViewModel)
 }
 
 protocol ChartViewControllerOutput {
@@ -38,7 +38,7 @@ class ChartViewController: UIViewController, ChartViewControllerInput {
         presenter.stopUpdatingData()
     }
     
-    func setupView(viewModel: ChartViewModel) {
+    func setupView(viewModel: PointViewModel) {
         contentView.update(viewModel: viewModel)
     }
     

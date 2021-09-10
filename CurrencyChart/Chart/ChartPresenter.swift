@@ -26,7 +26,7 @@ class ChartPresenter: ChartViewControllerOutput {
             else { return }
             print("Last price of \(pair): \(result.lastPrice)")
             self.counter += 1
-            let viewModel = ChartViewModel(x: self.counter, y: result.lastPrice)
+            let viewModel = PointViewModel(x: self.counter, y: result.lastPrice)
             view.setupView(viewModel: viewModel)
         }
     }
